@@ -1,6 +1,5 @@
-int n = 40;
-int tacquisizione = 1;
-int analogPin = A0;
+int n = 3;
+int tacquisizione = 5000;
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT);
@@ -18,8 +17,10 @@ void loop() {
       startREC(); break;
       case 'b' :
       stopREC(); break;
-      case 'c' :
-      acquisitionREC(); break;
+      case 'c' : 
+      startstopREC(); break;
+      case 'd' :
+      nacquisitionREC(); break;
     }
   }
 }
@@ -34,11 +35,20 @@ void stopREC() {
   Serial.println("Spento");
 }
 
-void acquisitionREC() {
-  for (int i=0; i<n; i++) 
-  {
-  analogRead(analogPin);
-  delay(tacquisizione);
-  }
+void startstopREC() {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(tacquisizione);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(tacquisizione);
 }
+
+void nacquisitionREC() {
+  for (int i=0; i<n; i++) {
+    digitalWrite(i, HIGH);
+    }
+  delay(tacquisizione);
+  for (int i=0; i<n; i++) { 
+    digitalWrite(i, LOW);
+    }
+  }
  
