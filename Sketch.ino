@@ -13,6 +13,7 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.println ("Inserisci i dati <Modalità, Tempo di Acquisizione, tON, Numero Impulsi>");
+  Serial.println ("Per START e STOP <START || STOP, 0, 0, 0>");
   Serial.begin(9600);
 }
 
