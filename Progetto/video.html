@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        Sincronizzazione Video SWIM4All
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        window.onload = function () {
+
+            var video1 = document.getElementById('video1');
+
+            video1.addEventListener("play", function () {
+                document.getElementById('video2').play();
+                document.getElementById('video3').play();
+            });
+
+            video1.addEventListener("pause", function () {
+                document.getElementById('video2').pause();
+                document.getElementById('video3').pause();
+            })
+
+            video1.addEventListener("seeking", function () {
+                document.getElementById('video2').currentTime = video1.currentTime;
+                document.getElementById('video3').currentTime = video1.currentTime;
+            })
+
+            video1.addEventListener("seeked", function () {
+                document.getElementById('video2').currentTime = video1.currentTime;
+                document.getElementByID('video3').currentTime = video1.currentTime;
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        SWIM4All Video
+    </h1>
+    <div id="video-container">
+        <video id="video1" src="../Tirocinio/video.mp4" controls> </video>
+        <video id="video2" src="../Tirocinio/video.mp4"></video>
+        <video id="video3" src="../Tirocinio/video.mp4"></video>
+    </div>
+</body>
+
+</html>

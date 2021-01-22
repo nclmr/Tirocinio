@@ -1,0 +1,17 @@
+#video-container{
+    width: 100%;
+    height: auto;
+}
+#video1 {
+    width: 30%;
+    float: left;
+}
+
+#video2 {
+    width: 30%;
+    float: left;
+}
+
+#video3 {
+    width: 30%;
+}
